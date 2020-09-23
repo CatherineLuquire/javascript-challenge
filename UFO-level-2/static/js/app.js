@@ -1,24 +1,15 @@
 // from data.js
 var tableData = data;
-
 // Get a reference to the table body
 var tbody = d3.select("tbody");
 var tr = d3.select("tr")
 
-// function filter(inputValue) {
-//     for (var i = 0; i < tr.length; i++) {
-//         td = tr[i].getElementsByTagName("td")[0];
-//         if (td) {
-//             datefilter = td.value 
-//             tr[i].style.display = "";}
-//             else { tr[i].style.display = "none";}
-//         }
-//     }
-
-
 // console.log the ufo data from data.js
 console.log(tableData);
 
+// use loop to create table out of data file
+// for each object in table data, create a row in the html table 
+// and for each key, value, populate table data with the value.
 tableData.forEach((ufoInfo) => {
   var row = tbody.append("tr");
   Object.entries(ufoInfo).forEach(([key, value]) => {
@@ -26,11 +17,10 @@ tableData.forEach((ufoInfo) => {
     cell.text(value);
   });
 });
+
 // Getting a reference to the button on the page with the id property set to `click-me`
 var button = d3.select("#filter-btn");
 var form = d3.select("#form");
-// // var inputField = d3.select("#datetime");
-// // console.log(inputField);
 
 // // Create event handlers for clicking the button or pressing the enter key
 button.on("click", runEnter);
@@ -42,15 +32,14 @@ function runEnter() {
   // Prevent the page from refreshing
   d3.event.preventDefault();
 
-  // Select the input element and get the raw HTML node
+  // Select the input elements and get the raw HTML node
   var inputDate = d3.select("#datetime");
   var inputCity = d3.select("#city");
   var inputState = d3.select("#state");
   var inputCountry = d3.select("#country");
   var inputShape = d3.select("#shape");
 
-
-  // Get the value property of the input element
+  // Get the value properties of each input element
   var dateValue = inputDate.property("value");
   var cityValue = inputCity.property("value");
   var stateValue = inputState.property("value");
@@ -60,6 +49,7 @@ function runEnter() {
   // Print the value to the console
   console.log(dateValue, cityValue, stateValue, countryValue, shapeValue);
 
+  // use conditionals to filter through all data input values
   if (dateValue) {
     var filteredData = tableData.filter(ufo => ufo.datetime === dateValue);
   }
@@ -84,7 +74,7 @@ function runEnter() {
     filteredData = filteredData.filter(ufo => ufo.shape === shapeValue);
   }
 
-
+  // run table loop again to create filtered table
   filteredData.forEach((ufoInfo) => {
     var row = tbody.append("tr");
     Object.entries(ufoInfo).forEach(([key, value]) => {
@@ -93,75 +83,3 @@ function runEnter() {
     });
   });
 }
-//   function dateInput(ufoInfo) {
-//     return ufoInfo.datetime == dateValue;
-// }
-//   dateData = tableData.filter(dateInput);
-//   console.log(dateData);
-
-//   dateData.forEach((ufoInfo) => {
-
-//     var row = tbody.append("tr");
-//     Object.entries(ufoInfo).forEach(([key, value]) => {
-//       var cell = row.append("td");
-//       cell.text(value);
-//     });
-//   });
-
-//   function cityInput(ufoInfo) {
-//     return ufoInfo.city == cityValue;
-//   }
-
-//   cityData = dateData.filter(cityInput);
-//   console.log(cityData);
-//   cityData.forEach((ufoInfo) => {
-//     var row = tbody.append("tr");
-//     Object.entries(ufoInfo).forEach(([key, value]) => {
-//       var cell = row.append("td");
-//       cell.text(value);
-//     });
-//   });
-
-//   function stateInput(ufoInfo) {
-//     return ufoInfo.state == stateValue;
-//   }
-//   stateData = cityData.filter(stateInput);
-//   console.log(stateData);
-
-//   stateData.forEach((ufoInfo) => {
-//     var row = tbody.append("tr");
-//     Object.entries(ufoInfo).forEach(([key, value]) => {
-//       var cell = row.append("td");
-//       cell.text(value);
-//     });
-//   });
-
-//   function countryInput(ufoInfo) {
-//     return ufoInfo.country == countryValue;
-//   }
-//   countryData = stateData.filter(countryInput)
-//   console.log(countryData);
-//   countryData.forEach((ufoInfo) => {
-//     var row = tbody.append("tr");
-//     Object.entries(ufoInfo).forEach(([key, value]) => {
-//       var cell = row.append("td");
-//       cell.text(value);
-//     });
-//   });
-
-//   function shapeInput(ufoInfo) {
-//     return ufoInfo.shape == shapeValue;
-//   }
-//   shapeData = countryData.filter(shapeInput)
-//   console.log(shapeData)
-// //   function selectDate(ufo) {
-// //     return ufo.datetime == inputValue;
-// //     console.log(ufo.datetime)
-//     shapeData.forEach((ufoInfo) => {
-//         var row = tbody.append("tr");
-//         Object.entries(ufoInfo).forEach(([key, value]) => {
-//           var cell = row.append("td");
-//           cell.text(value);
-//         });
-//       });
-//     }
