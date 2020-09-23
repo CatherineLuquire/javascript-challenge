@@ -2,12 +2,12 @@
 ---
 Created two separate webpages to filter UFO sightings. The UFO-level-1 filters by date, and UFO-level-2 filters by date, city, state, country, and shape. 
 ---
-![Earth Image] (UFO-level-2/static/images/nasa.jpg)
+![Earth Image](https://github.com/CatherineLuquire/javascript-challenge/blob/master/UFO-level-2/static/images/nasa.jpg)
 ---
 ## Table of Contents
 
 * [Technologies](#technologies)
-* [Installation](#installation)
+* [Installation](#installation-and-usages)
 * [Development Process](#development-process)
 * [Data Sources](#data-sources)
 * [Contact](#contact)
@@ -18,14 +18,6 @@ Created two separate webpages to filter UFO sightings. The UFO-level-1 filters b
 * HTML & CSS:
     * Bootstrap - version 3.3.7
     
-    ## Table of contents
-
-    * [Technologies](#technologies)
-    * [Installation](#installation)
-    * [Development Process](#development-process)
-    * [Data Sources](#data-sources)
-    * [Contact](#contact)
-
 ## Installation and Usages
 ## Development Process
 ## Data Sources
