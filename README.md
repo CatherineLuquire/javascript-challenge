@@ -7,7 +7,6 @@ Created two separate webpages to filter UFO sightings. The UFO-level-1 filters b
 ## Table of Contents
 
 * [Technologies](#technologies)
-* [Installation](#installation-and-usages)
 * [Development Process](#development-process)
 * [Data Sources](#data-sources)
 * [Contact](#contact)
@@ -18,9 +17,18 @@ Created two separate webpages to filter UFO sightings. The UFO-level-1 filters b
 * HTML & CSS:
     * Bootstrap - version 3.3.7
     
-## Installation and Usages
 ## Development Process
+* UFO-level-1
+1. Used javascript to create and populate an HTML table.
+2 .Used javascript to filter by input date and rebuild the HTML table with filtered data.
+
+UFO-level-2
+1. Used javascript to create and populate an HTML table.
+2. Used javascript to filter data by 5 different input values and rebuild the HTML table with filtered data.
+
 ## Data Sources
+* [UFO Sightings Data](StarterCode/static/js/data.js)
+
 ## Contact
 Created by [Katy Luquire](https://github.com/CatherineLuquire)
 
